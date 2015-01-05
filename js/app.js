@@ -1,6 +1,10 @@
 var app = angular.module('myApp', ['ngRoute', 'ngAria', 'ngMessages']);
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
+    .when('/intro', {
+        templateUrl: 'partials/intro.html',
+        controller: 'IntroCtrl'
+    })
     .when('/onetimebinding', {
         templateUrl: 'partials/onetimebinding.html',
         controller: 'OneTimeBindingCtrl'
@@ -20,6 +24,10 @@ app.config(['$routeProvider', function($routeProvider) {
     .when('/strictdi', {
         templateUrl: 'partials/strictdi.html',
         controller: 'MyStrictDiCtrl'
+    })
+    .when('/resources', {
+        templateUrl: 'partials/resources.html',
+        controller: 'ResourcesCtrl'
     })
     .when('/forms', {
         templateUrl: 'partials/forms.html',

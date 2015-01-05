@@ -1,5 +1,9 @@
 <h1>One-time binding</h1>
 
+<h2>Description</h2>
+
+<p>An expression that starts with :: is considered a one-time expression. One-time expressions will stop recalculating once they are stable, which happens after the first digest if the expression result is a non-undefined value (see value stabilization algorithm in References below).</p>
+
 <h2>Example</h2>
 
 <form name="myForm">

@@ -1,19 +1,38 @@
 <h1>ngModelOptions</h1>
 
+<h2>Description</h2>
+
+<h2>Example</h2>
+
 <script type="text/ng-template" id="error-messages">
     <div class="error">
-        <div ng-message="required">You did not enter a field</div>
+        <div ng-message="required">This field is required</div>
         <div ng-message="minlength">The value entered is too short</div>
     </div>
 </script>
 
-<form name="myForm">
+<form name="myForm" novalidate>
     <div>
-        Field 1: <input type="text" ng-model="field" name="myField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" />
-        <div ng-messages="myForm.myField.$error" ng-messages-include="error-messages"></div>
+        Blurred: <input type="text" ng-model="blurredField" name="myBlurredField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
+        <div ng-messages="myForm.myBlurredField.$error" ng-messages-include="error-messages"></div>
     </div>
     <div>
-        Field 2: <input type="text" ng-model="field2" name="myField2" required="required" minlength="8" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" />
+        Touched: <input type="text" ng-model="touched" name="myTouchedField" required="required" minlength="5" /> (if touched)
+        <div ng-messages="myForm.myTouchedField.$error" ng-messages-include="error-messages" ng-if="myForm.myTouchedField.$touched"></div>
+    </div>
+    <div>
+        Blurred and Touched: <input type="text" ng-model="blurredTouchedField" name="myBlurredTouchedField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
+        <div ng-messages="myForm.myBlurredTouchedField.$error" ng-messages-include="error-messages" ng-if="myForm.myBlurredTouchedField.$touched"></div>
+    </div>
+    <div>
+        Field 2: <input type="text" ng-model="field2" name="myField2" required="required" minlength="5" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" /> (debounce)
         <div ng-messages="myForm.myField2.$error" ng-messages-include="error-messages"></div>
+    </div>
+    <div>
+        Field 3: <input type="text" ng-model="field3" name="myField3" required="required" minlength="5"/> (if submitted)
+        <div ng-messages="myForm.myField3.$error" ng-messages-include="error-messages" ng-if="myForm.$submitted"></div>
+    </div>
+    <div>
+        <input type="submit" value="Submit">
     </div>
 </form>

@@ -1,9 +1,14 @@
 <h1>ngMessages</h1>
 
+<h2>Description</h2>
+
+<p>The ngMessages module provides enhanced support for displaying messages within templates (typically within forms or when rendering message objects that return key/value data). Instead of relying on JavaScript code and/or complex ng-if statements within your form template to show and hide error messages specific to the state of an input field, the ngMessages and ngMessage directives are designed to handle the complexity, inheritance and priority sequencing based on the order of how the messages are defined in the template.</p>
+
 <h2>Example</h2>
+
 <script type="text/ng-template" id="error-messages">
     <div class="error">
-        <div ng-message="required">You did not enter a field</div>
+        <div ng-message="required">This field is required</div>
         <div ng-message="minlength">The value entered is too short</div>
     </div>
 </script>
@@ -19,12 +24,12 @@
     </div>
 </form>
 
-<h2>Areas</h2>
+<h2>Usage</h2>
 
 <ul>
     <li>ngMessages directive</li>
     <li>ngMessage directive</li>
-    <li>Re-using messages</li>
+    <li>Reusing messages</li>
     <li>Overriding messages</li>
 </ul>
 

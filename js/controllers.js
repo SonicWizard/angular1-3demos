@@ -1,4 +1,6 @@
 angular.module('myApp')
+.controller('IntroCtrl', ['$scope', function($scope) {
+}])
 .controller('OneTimeBindingCtrl', ['$scope', function($scope) {
     $scope.first = 'Mickey';
     $scope.last = 'Mouse';
@@ -23,6 +25,8 @@ angular.module('myApp')
 .controller('MyStrictDiCtrl', function($scope) {
     $scope.content = 'here is the content';
 })
+.controller('ResourcesCtrl', ['$scope', function($scope) {
+}])
 .controller('FormsCtrl', ['$scope', function($scope) {
     $scope.first = 'Mickey';
     $scope.last = 'Mouse';
