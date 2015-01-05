@@ -4,7 +4,7 @@
 
 <p>Allows tuning how model updates are done. Using ngModelOptions you can specify a custom list of events that will trigger a model update and/or a debouncing delay so that the actual update only takes place when a timer expires.</p>
 
-<h2>Example</h2>
+<h2>Examples</h2>
 
 <script type="text/ng-template" id="error-messages">
     <div class="error">
@@ -15,31 +15,37 @@
 
 <form name="myForm" novalidate>
     <div class="form-group">
-        Blurred: <input type="text" ng-model="blurredField" name="myBlurredField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
+        <label>Blurred</label>
+        <input type="text" ng-model="blurredField" name="myBlurredField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
         <div ng-messages="myForm.myBlurredField.$error" ng-messages-include="error-messages"></div>
     </div>
     <div class="form-group">
-        Touched: <input type="text" ng-model="touched" name="myTouchedField" required="required" minlength="5" /> (if touched)
+        <label>Touched</label>
+        <input type="text" ng-model="touched" name="myTouchedField" required="required" minlength="5" /> (if touched)
         <div ng-messages="myForm.myTouchedField.$error" ng-messages-include="error-messages" ng-if="myForm.myTouchedField.$touched"></div>
     </div>
     <div class="form-group">
-        Blurred and Touched: <input type="text" ng-model="blurredTouchedField" name="myBlurredTouchedField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur and touched)
+        <label>Blurred and Touched</label>
+        <input type="text" ng-model="blurredTouchedField" name="myBlurredTouchedField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur and touched)
         <div ng-messages="myForm.myBlurredTouchedField.$error" ng-messages-include="error-messages" ng-if="myForm.myBlurredTouchedField.$touched"></div>
     </div>
-    <div>
-        Debounced: <input type="text" ng-model="field2" name="myField2" required="required" minlength="5" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" /> (debounce)
+    <div class="form-group">
+        <label>Debounced</label>
+        <input type="text" ng-model="field2" name="myField2" required="required" minlength="5" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" /> (debounce)
         <div ng-messages="myForm.myField2.$error" ng-messages-include="error-messages"></div>
     </div>
-    <div>
-        Submitted: <input type="text" ng-model="field3" name="myField3" required="required" minlength="5"/> (if submitted)
+    <div class="form-group">
+        <label>Submitted</label>
+        <input type="text" ng-model="field3" name="myField3" required="required" minlength="5"/> (if submitted)
         <div ng-messages="myForm.myField3.$error" ng-messages-include="error-messages" ng-if="myForm.$submitted"></div>
     </div>
-    <div>
-        Touched and Submitted: <input type="text" ng-model="touchedAndSubmitted" name="myTouchedAndSubmittedField" required="required" minlength="5"/> (if touched or submitted)
+    <div class="form-group">
+        <label>Touched and Submitted</label>
+        <input type="text" ng-model="touchedAndSubmitted" name="myTouchedAndSubmittedField" required="required" minlength="5"/> (if touched or submitted)
         <div ng-messages="myForm.myTouchedAndSubmittedField.$error" ng-messages-include="error-messages" ng-if="myForm.myTouchedAndSubmittedField.$touched || myForm.$submitted"></div>
     </div>
     <div>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class="btn btn-default">
     </div>
 </form>
 
