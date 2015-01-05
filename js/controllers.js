@@ -16,6 +16,13 @@ angular.module('myApp')
     $scope.field;
     $scope.field2;
 }])
+.controller('NgModelOptionsCtrl', ['$scope', function($scope) {
+    $scope.field;
+    $scope.field2;
+}])
+.controller('MyStrictDiCtrl', function($scope) {
+    $scope.content = 'here is the content';
+})
 .controller('FormsCtrl', ['$scope', function($scope) {
     $scope.first = 'Mickey';
     $scope.last = 'Mouse';

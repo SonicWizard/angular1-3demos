@@ -13,6 +13,14 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/ngMessages.html',
         controller: 'NgMessagesCtrl'
     })
+    .when('/ngModelOptions', {
+        templateUrl: 'partials/ngModelOptions.html',
+        controller: 'NgModelOptionsCtrl'
+    })
+    .when('/strictdi', {
+        templateUrl: 'partials/strictdi.html',
+        controller: 'MyStrictDiCtrl'
+    })
     .when('/forms', {
         templateUrl: 'partials/forms.html',
         controller: 'FormsCtrl'
