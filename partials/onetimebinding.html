@@ -1,0 +1,10 @@
+<form name="myForm">
+    <p><i>Type something:</i> <input type="text" ng-model="boundText"/></p>
+
+    <div>
+        <ol>
+            <li><strong>Regular binding updates:</strong> {{boundText}}</li>
+            <li><strong>One-time binding does not:</strong> {{::boundText}}</li>
+        </ol>
+    </div>
+</form>

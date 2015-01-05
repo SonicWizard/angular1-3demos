@@ -1,7 +1,34 @@
-<form>
+<h2>ngMessages</h2>
+
+<div>
+    example:
+</div>
+
+<h2>Custom Validators</h2>
+
+<div>
+    directive
+</div>
+
+<h2>HTML5 Validators & Parse Errors</h2>
+<div>
+    Prior to AngularJS 1.3, only certain input attributes would trigger a validator to be registered on the model. Now all of the HTML5 validation attributes are properly bound to ngModel and the errors are registered on ngModel.$error whenever the validation fails. <a href="http://www.yearofmoo.com/2014/09/taming-forms-in-angularjs-1-3.html#html5-validators-and-parse-errors">This table shows each of the attributes and what error will be triggered upon failure</a>
+</div>
+
+<h2>ng-model-options</h2>
+<form novalidate name="myForm">
     <p>First <input type="text" ng-model="first" placeholder="first name"/></p>
     <p>Last <input type="text" ng-model="last" placeholder="last name"/></p>
     <p>Address <input type="text" ng-model="address" placeholder="address"/></p>
     <p>City <input type="text" ng-model="city" placeholder="city"/></p>
+    <div class="field">
+        <input type="email" name="myEmail" minlength="5" maxlength="100" ng-model="myEmail" placeholder="email" required="required" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
+        <div ng-if="myForm.myEmail.$invalid" class="error">
+            There is an error with the field...
+        </div>
+    </div>
     <p>Comment <textarea placeholder="test"></textarea></p>
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
 </form>

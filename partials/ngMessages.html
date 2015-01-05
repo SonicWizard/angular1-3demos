@@ -1,0 +1,17 @@
+<script type="text/ng-template" id="error-messages">
+    <div class="error">
+        <div ng-message="required">You did not enter a field</div>
+        <div ng-message="minlength">The value entered is too short</div>
+    </div>
+</script>
+
+<form name="myForm">
+    <div>
+        Field 1: <input type="text" ng-model="field" name="myField" required="required" minlength="5" />
+        <div ng-messages="myForm.myField.$error" ng-messages-include="error-messages"></div>
+    </div>
+    <div>
+        Field 2: <input type="text" ng-model="field2" name="myField2" required="required" minlength="5" />
+        <div ng-messages="myForm.myField2.$error" ng-messages-include="error-messages"></div>
+    </div>
+</form>
