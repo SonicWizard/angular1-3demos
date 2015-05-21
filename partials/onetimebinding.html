@@ -4,6 +4,13 @@
 
 <p>An expression that starts with :: is considered a one-time expression. One-time expressions will stop recalculating once they are stable, which happens after the first digest if the expression result is a non-undefined value (see value stabilization algorithm in References below).</p>
 
+<h2>
+    Why this feature
+</h2>
+
+<p>
+The main purpose of one-time binding expression is to provide a way to create a binding that gets deregistered and frees up resources once the binding is stabilized. Reducing the number of expressions being watched makes the digest loop faster and allows more information to be displayed at the same time.
+</p>
 <h2>Example</h2>
 
 <form name="myForm">
@@ -20,5 +27,5 @@
 <h2>Reference</h2>
 
 <ul>
-    <li><a href="https://docs.angularjs.org/guide/expression#one-time-binding">https://docs.angularjs.org/guide/expression#one-time-binding</a></li>
+    <li><a href="https://docs.angularjs.org/guide/expression#one-time-binding" target="_blank">https://docs.angularjs.org/guide/expression#one-time-binding</a></li>
 </ul>

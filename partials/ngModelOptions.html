@@ -16,7 +16,7 @@
 <form name="myForm" novalidate>
     <div class="form-group">
         <label>Blurred</label>
-        <input type="text" ng-model="blurredField" name="myBlurredField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
+        <input type="text" ng-model="blurredField" name="myBlurredField" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur)
         <div ng-messages="myForm.myBlurredField.$error" ng-messages-include="error-messages"></div>
     </div>
     <div class="form-group">
@@ -25,13 +25,8 @@
         <div ng-messages="myForm.myTouchedField.$error" ng-messages-include="error-messages" ng-if="myForm.myTouchedField.$touched"></div>
     </div>
     <div class="form-group">
-        <label>Blurred and Touched</label>
-        <input type="text" ng-model="blurredTouchedField" name="myBlurredTouchedField" required="required" minlength="5" ng-model-options="{ updateOn: 'blur' }" /> (on blur and touched)
-        <div ng-messages="myForm.myBlurredTouchedField.$error" ng-messages-include="error-messages" ng-if="myForm.myBlurredTouchedField.$touched"></div>
-    </div>
-    <div class="form-group">
         <label>Debounced</label>
-        <input type="text" ng-model="field2" name="myField2" required="required" minlength="5" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" /> (debounce)
+        <input type="text" ng-model="field2" name="myField2" minlength="5" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" /> (debounce)
         <div ng-messages="myForm.myField2.$error" ng-messages-include="error-messages"></div>
     </div>
     <div class="form-group">
@@ -42,7 +37,7 @@
     <div class="form-group">
         <label>Touched and Submitted</label>
         <input type="text" ng-model="touchedAndSubmitted" name="myTouchedAndSubmittedField" required="required" minlength="5"/> (if touched or submitted)
-        <div ng-messages="myForm.myTouchedAndSubmittedField.$error" ng-messages-include="error-messages" ng-if="myForm.myTouchedAndSubmittedField.$touched || myForm.$submitted"></div>
+        <div ng-messages="myForm.myTouchedAndSubmittedField.$error" ng-messages-include="error-messages" ng-if="myForm.myTouchedAndSubmittedField.$touched && myForm.$submitted"></div>
     </div>
     <div>
         <input type="submit" value="Submit" class="btn btn-default">
@@ -52,6 +47,6 @@
 <h2>Reference</h2>
 
 <ul>
-    <li><a href="https://code.angularjs.org/1.3.7/docs/api/ng/directive/ngModelOptions">https://code.angularjs.org/1.3.7/docs/api/ng/directive/ngModelOptions</a></li>
-    <li><a href="http://www.htmlxprs.com/post/11/angularjs-1.3-form-validation-tutorial">AngularJS 1.3 Form Validation - Tutorial</a></li>
+    <li><a href="https://code.angularjs.org/1.3.15/docs/api/ng/directive/ngModelOptions" target="_blank">https://code.angularjs.org/1.3.15/docs/api/ng/directive/ngModelOptions</a></li>
+    <li><a href="http://www.htmlxprs.com/post/11/angularjs-1.3-form-validation-tutorial" target="_blank">AngularJS 1.3 Form Validation - Tutorial</a></li>
 </ul>
